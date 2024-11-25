@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Jaunatre - Game Developer Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            border-bottom: 3px solid #4a5568;
+            padding-bottom: 1rem;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            color: inherit;
+        }
+        .project-card {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        h2 {
+            color: #4a5568;
+            margin-top: 0;
+        }
+        .skills {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .bio {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gabriel Jaunatre</h1>
+    
+    <div class="bio">
+        Étudiant passionné de développement de jeux vidéo
+    </div>
+
+    <div class="project-grid">
+        <a href="#" class="project-card">
+            <h2>Chess Game</h2>
+            <p>Un jeu d'échecs en développement, démontrant mes compétences en logique de jeu et en programmation Python.</p>
+        </a>
+
+        <a href="#" class="project-card">
+            <h2>Tic-Tac-Toe (Morpion)</h2>
+            <p>Implémentation complète du jeu de Morpion en Python, incluant une interface utilisateur interactive.</p>
+        </a>
+
+        <a href="#" class="project-card">
+            <h2>2D Game Project</h2>
+            <p>Jeu 2D créé lors du summer camp à ISART, mettant en pratique les fondamentaux du game design.</p>
+        </a>
+    </div>
+
+    <div class="skills">
+        <h2>Compétences Techniques</h2>
+        <ul>
+            <li>Python</li>
+            <li>Programmation Orientée Objet</li>
+            <li>Mathématiques</li>
+            <li>NSI (Numérique et Sciences Informatiques)</li>
+            <li>Game Design</li>
+        </ul>
+    </div>
+</body>
+</html>
