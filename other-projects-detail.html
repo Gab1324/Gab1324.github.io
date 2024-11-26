@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet - Gabriel Jaunatre</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .project-container {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .project-title {
+            color: #2d3748;
+            text-align: center;
+            margin: 0 0 2rem 0;
+        }
+        .image-section {
+            margin: 2rem 0;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .image-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: black;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-content {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            min-height: 200px;
+        }
+        .technologies {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .technologies h3 {
+            color: #4a5568;
+            margin-top: 0;
+        }
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background-color: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Retour aux projets</a>
+    
+    <div class="project-container">
+        <h2 class="project-title">Autres Projets</h2>
+        
+        <div class="image-section">
+            <div class="image-container">
+                <img src="path/to/your/image.jpg" alt="Aperçu du projet">
+            </div>
+        </div>
+
+        <div class="project-content">
+            <!-- Zone de texte pour la description détaillée -->
+        </div>
+
+        <div class="technologies">
+            <h3>Compétences</h3>
+            <div class="tech-list">
+                <span class="tech-tag">Dessin</span>
+                <span class="tech-tag">Logique</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
