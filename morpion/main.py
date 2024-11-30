@@ -114,6 +114,7 @@ async def main():
         texte_rect = texte.get_rect(center = carré.center)
         screen.blit(texte, texte_rect)
         pygame.display.flip()
+        await asyncio.sleep(0)
         
         for event in pygame.event.get():
                             
@@ -288,8 +289,7 @@ async def main():
             
             if winp:
                 player1_win += 1
-                S = threading.Timer(0.1, start)  
-                S.start()
+                pygame.time.wait(500)
                 Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
 
                 case1 = ''
@@ -309,8 +309,7 @@ async def main():
                 
             if wini:
                 player2_win += 1
-                S = threading.Timer(0.1, start)  
-                S.start()
+                pygame.time.wait(500)
                 Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
 
                 case1 = ''
@@ -330,8 +329,7 @@ async def main():
                 
             if turn == 9:
                 egalite += 1
-                S = threading.Timer(0.1, start)  
-                S.start()
+                pygame.time.wait(500)
                 Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
 
                 case1 = ''
