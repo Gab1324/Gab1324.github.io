@@ -13,18 +13,18 @@ SCREEN_HEIGHT = 600
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-icon = pygame.image.load(r"C:\Users\GABRIEL.JAUNATRE\OneDrive - Conseil Régional des Pays de La Loire - Direction des Lycées\Documents\programmation\jeu morpion\icon-morpion.png").convert_alpha()
+icon = pygame.image.load('assets/icon-morpion.png').convert_alpha()
 pygame.display.set_icon(icon)
 
 square_height = screen.get_height()/3
 square_width = screen.get_width()/3
 
 async def main():
-    grille = pygame.image.load(r"C:\Users\GABRIEL.JAUNATRE\OneDrive - Conseil Régional des Pays de La Loire - Direction des Lycées\Documents\programmation\jeu morpion\grille.jpg").convert()
+    grille = pygame.image.load('assets/grille.jpg').convert()
     size_grille = pygame.transform.scale(grille, (SCREEN_WIDTH, SCREEN_HEIGHT))
-    cercle = pygame.image.load(r"C:\Users\GABRIEL.JAUNATRE\OneDrive - Conseil Régional des Pays de La Loire - Direction des Lycées\Documents\programmation\jeu morpion\cercle.png").convert_alpha()
+    cercle = pygame.image.load('assets/cercle.png').convert_alpha()
     size_cercle = pygame.transform.scale(cercle, (square_width - 10, square_height - 10))
-    croix = pygame.image.load(r"C:\Users\GABRIEL.JAUNATRE\OneDrive - Conseil Régional des Pays de La Loire - Direction des Lycées\Documents\programmation\jeu morpion\croix.png").convert_alpha()
+    croix = pygame.load('assets/croix.png').convert_alpha()
     size_croix = pygame.transform.scale(croix, (square_width - 10, square_height - 10))
 
     square1 = pygame.Rect(0, 0, square_width, square_height)
