@@ -24,7 +24,7 @@ async def main():
     size_grille = pygame.transform.scale(grille, (SCREEN_WIDTH, SCREEN_HEIGHT))
     cercle = pygame.image.load('assets/cercle.png').convert_alpha()
     size_cercle = pygame.transform.scale(cercle, (square_width - 10, square_height - 10))
-    croix = pygame.load('assets/croix.png').convert_alpha()
+    croix = pygame.image.load('assets/croix.png').convert_alpha()
     size_croix = pygame.transform.scale(croix, (square_width - 10, square_height - 10))
 
     square1 = pygame.Rect(0, 0, square_width, square_height)
