@@ -91,6 +91,18 @@ async def main():
     def start():
         screen.blit(size_grille, (0, 0))
         pygame.display.update()
+        
+        
+    def restart(winner):
+        end_font=pygame.font.Font(None, 50)  
+        restart_font = pygame.font.Font(None, 30)
+        surface = pygame.Surface((600, 600))
+        screen.fill("white")
+        gagnant = end_font.render(winner + "a gagné ", 1, (0, 0, 0))
+        screen.blit(gagnant, (160, 190))
+        restart_text = restart_font.render("Nouvelle partie", 1, (255, 255, 255))
+        restart_button = pygame.draw.rect(screen, "black", pygame.Rect(200, 300, 200, 50),  0, 3)
+        screen.blit(restart_text, (restart_button.left + 25, restart_button.top + 17))
 
     run = True
     while run:
@@ -288,64 +300,71 @@ async def main():
                     wini = True
             
             if winp:
-                player1_win += 1
-                pygame.time.wait(500)
-                Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
-
-                case1 = ''
-                case2 = ''
-                case3 = ''
-                case4 = ''
-                case5 = ''
-                case6 = ''
-                case7 = ''
-                case8 = ''
-                case9 = ''
-
-                winp = False
-                wini = False
-                turn = 0
-                player_turn = True
+                restart("Joueur 1 ")
+                if event.type == pygame.MOUSEBUTTONUP:
+                    x, y = pygame.mouse.get_pos()
+                    if (x >= 200 and x <= 400) and (y >= 300 and y <= 350):
+                        Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
+                        case1 = ''
+                        case2 = ''
+                        case3 = ''
+                        case4 = ''
+                        case5 = ''
+                        case6 = ''
+                        case7 = ''
+                        case8 = ''
+                        case9 = ''
+                        winp = False
+                        wini = False
+                        turn = 0
+                        player_turn = True
+                        player1_win += 1
+                        screen.blit(size_grille, (0, 0))
+                
                 
             if wini:
-                player2_win += 1
-                pygame.time.wait(500)
-                Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
-
-                case1 = ''
-                case2 = ''
-                case3 = ''
-                case4 = ''
-                case5 = ''
-                case6 = ''
-                case7 = ''
-                case8 = ''
-                case9 = ''
-
-                winp = False
-                wini = False
-                turn = 0
-                player_turn = True
+                restart("Joueur 2 ")
+                if event.type == pygame.MOUSEBUTTONUP:
+                    x, y = pygame.mouse.get_pos()
+                    if (x >= 200 and x <= 400) and (y >= 300 and y <= 350):
+                        Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
+                        case1 = ''
+                        case2 = ''
+                        case3 = ''
+                        case4 = ''
+                        case5 = ''
+                        case6 = ''
+                        case7 = ''
+                        case8 = ''
+                        case9 = ''
+                        winp = False
+                        wini = False
+                        turn = 0
+                        player_turn = True
+                        player2_win += 1
+                        screen.blit(size_grille, (0, 0))
                 
             if turn == 9:
-                egalite += 1
-                pygame.time.wait(500)
-                Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
-
-                case1 = ''
-                case2 = ''
-                case3 = ''
-                case4 = ''
-                case5 = ''
-                case6 = ''
-                case7 = ''
-                case8 = ''
-                case9 = ''
-
-                winp = False
-                wini = False
-                turn = 0
-                player_turn = True
+                restart("Personne n'")
+                if event.type == pygame.MOUSEBUTTONUP:
+                    x, y = pygame.mouse.get_pos()
+                    if (x >= 200 and x <= 400) and (y >= 300 and y <= 350):
+                        Liste = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9]
+                        case1 = ''
+                        case2 = ''
+                        case3 = ''
+                        case4 = ''
+                        case5 = ''
+                        case6 = ''
+                        case7 = ''
+                        case8 = ''
+                        case9 = ''
+                        winp = False
+                        wini = False
+                        turn = 0
+                        player_turn = True
+                        egalite += 1    
+                        screen.blit(size_grille, (0, 0))
         
         
         pygame.display.flip()
