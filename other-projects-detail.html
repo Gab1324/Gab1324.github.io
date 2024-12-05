@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autres Projets - Gabriel Jaunatre</title>
     <style>
+        /* Previous styles remain the same */
         :root {
             --bg-primary: #111827;
             --bg-card: #1F2937;
@@ -68,26 +69,43 @@
             margin-bottom: 2rem;
         }
 
+        /* Updated image section styles for multiple images */
         .image-section {
             background-color: var(--bg-primary);
             border-radius: 0.5rem;
             overflow: hidden;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .image-section:hover {
+            transform: scale(1.02);
+        }
+
+        .image-section:last-of-type {
             margin-bottom: 2rem;
         }
 
         .image-container {
-            aspect-ratio: 16/9;
+            max-width: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            background-color: var(--bg-primary);
-            color: var(--text-secondary);
         }
 
         .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.25rem;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .image-container img:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
         }
 
         .text-section {
