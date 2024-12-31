@@ -1,4 +1,3 @@
-# chess
-Chess game with 1 and 2 players mode
+# Webstie
 
-I now have implemented all main features to play a chess game with 2 human users.
+Website that shows my skills in game programming. It also show other project that express my creativity and are relevant to video game.
