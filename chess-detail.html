@@ -124,11 +124,12 @@
         /* Ligne du bas - colonne de droite */
         .gallery-item:nth-child(3n):nth-child(n+4):hover {
             transform: scale(2) translate(-25%, -25%);
+        }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             transition: transform 0.3s ease;
         }
