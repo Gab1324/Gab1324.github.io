@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- Same head and style as chess page -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seul Au Monde - Gabriel Jaunatre</title>
-    <!-- Same styles as chess page -->
     <style>
         :root {
             --bg-primary: #111827;
@@ -70,20 +68,102 @@
             margin-bottom: 2rem;
         }
 
-        .video-section {
+        /* Styles pour la galerie */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
             background-color: var(--bg-primary);
             border-radius: 0.5rem;
-            overflow: hidden;
             margin-bottom: 2rem;
+            position: relative;
         }
 
-        .video-container {
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--bg-primary);
-            color: var(--text-secondary);
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:nth-child(3n-2):hover {
+            transform: scale(2) translate(25%, 25%);
+            z-index: 10;
+        }
+
+        /* Colonne du milieu */
+        .gallery-item:nth-child(3n-1):hover {
+            transform: scale(2) translate(0%, 25%);
+            z-index: 10;
+        }
+
+        /* Colonne de droite */
+        .gallery-item:nth-child(3n):hover {
+            transform: scale(2) translate(-25%, 25%);
+            z-index: 10;
+        }
+
+        /* Ligne du bas - colonne de gauche */
+        .gallery-item:nth-child(3n-2):nth-child(n+4):hover {
+            transform: scale(2) translate(25%, -25%);
+            z-index: 10;
+        }
+
+        /* Ligne du bas - colonne du milieu */
+        .gallery-item:nth-child(3n-1):nth-child(n+4):hover {
+            transform: scale(2) translateY(-25%);
+            z-index: 10;
+        }
+
+        /* Ligne du bas - colonne de droite */
+        .gallery-item:nth-child(3n):nth-child(n+4):hover {
+            transform: scale(2) translate(-25%, -25%);
+            z-index: 10;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.75rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Media queries pour la responsivité */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item:hover {
+                transform: scale(1.2);
+            }
         }
 
         .text-section {
@@ -97,10 +177,6 @@
 
         .text-section p {
             margin-bottom: 1rem;
-        }
-
-        .text-section p:last-child {
-            margin-bottom: 0;
         }
 
         .button-container {
@@ -123,14 +199,11 @@
             transform: translateY(-2px);
         }
 
-        .technologies {
-            text-align: center;
-        }
-
         .tech-title {
             font-size: 1.5rem;
             color: var(--accent-primary);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .tech-list {
@@ -163,13 +236,21 @@
         <div class="main-content">
             <h1 class="title">Seul Au Monde</h1>
 
-            <div class="video-section">
-                <div class="video-container">
-                    <video width="100%" height="100%" controls>
-                        <source src="path/to/your/video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <div class="gallery">
+                <!-- Vous pouvez ajouter vos images ici, en suivant ce modèle: -->
+                <div class="gallery-item">
+                    <img src="2d_game_pictures/menu.png" alt="Menu du jeu">
+                    <div class="gallery-caption">Menu principal</div>
                 </div>
+                <div class="gallery-item">
+                    <img src="2d_game_pictures/tuto1.png" alt="Tutoriel 1">
+                    <div class="gallery-caption">Début du tutoriel</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="2d_game_pictures/tuto2.png" alt="Tutoriel 2">
+                    <div class="gallery-caption">Suite du tutoriel</div>
+                </div>
+                <!-- Ajoutez autant d'images que nécessaire -->
             </div>
 
             <div class="text-section">
@@ -195,7 +276,7 @@
                 <a target="_blank" href="https://drive.google.com/file/d/1bO-D1ygC73Mr-Pvm5NPmeQfI3qxtXAXx/view?usp=sharing" class="play-button">Télécharger le jeu</a>
             </div>
 
-            <div class="technologies">
+            <div>
                 <h2 class="tech-title">Technologies utilisées</h2>
                 <div class="tech-list">
                     <span class="tech-tag">Unity</span>
