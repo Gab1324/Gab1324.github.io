@@ -68,20 +68,103 @@
             margin-bottom: 2rem;
         }
 
-        .video-section {
+        /* Styles pour la galerie */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
             background-color: var(--bg-primary);
             border-radius: 0.5rem;
-            overflow: hidden;
             margin-bottom: 2rem;
+            position: relative;
         }
 
-        .video-container {
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--bg-primary);
-            color: var(--text-secondary);
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(3) translate(33%, 33%);
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Ajustements pour les positions spécifiques */
+        .gallery-item:nth-child(3n):hover {
+            transform: scale(3) translate(-33%, 33%);
+        }
+
+        .gallery-item:nth-child(1n+4):hover {
+            transform: scale(3) translate(33%, -33%);
+        }
+
+        .gallery-item:nth-child(3n):nth-child(1n+4):hover {
+            transform: scale(3) translate(-33%, -33%);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.75rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Media queries pour la responsivité */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:hover {
+                transform: scale(2) translate(25%, 25%);
+            }
+            
+            .gallery-item:nth-child(2n):hover {
+                transform: scale(2) translate(-25%, 25%);
+            }
+            
+            .gallery-item:nth-child(1n+3):hover {
+                transform: scale(2) translate(25%, -25%);
+            }
+            
+            .gallery-item:nth-child(2n):nth-child(1n+3):hover {
+                transform: scale(2) translate(-25%, -25%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item:hover {
+                transform: scale(1.2);
+            }
         }
 
         .text-section {
@@ -95,10 +178,6 @@
 
         .text-section p {
             margin-bottom: 1rem;
-        }
-
-        .text-section p:last-child {
-            margin-bottom: 0;
         }
 
         .button-container {
@@ -121,14 +200,11 @@
             transform: translateY(-2px);
         }
 
-        .technologies {
-            text-align: center;
-        }
-
         .tech-title {
             font-size: 1.5rem;
             color: var(--accent-primary);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .tech-list {
@@ -161,12 +237,30 @@
         <div class="main-content">
             <h1 class="title">Jeu d'Échecs</h1>
 
-            <div class="video-section">
-                <div class="video-container">
-                    <video width="100%" height="100%" controls>
-                        <source src="path/to/your/video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Plateau initial">
+                    <div class="gallery-caption">Le plateau au début de la partie</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Mouvements possibles">
+                    <div class="gallery-caption">Visualisation des mouvements possibles</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Interface du jeu">
+                    <div class="gallery-caption">Interface complète du jeu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Situation d'échec">
+                    <div class="gallery-caption">Situation d'échec</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Roque">
+                    <div class="gallery-caption">Exemple d'un roque</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/600/400" alt="Fin de partie">
+                    <div class="gallery-caption">Écran de fin de partie</div>
                 </div>
             </div>
 
@@ -180,7 +274,7 @@
                     Les pièces suivent les règles officielles du jeu d'échecs, avec un système de validation 
                     des mouvements. De plus, les coups possibles d'une pièce s'affichent automatiquement 
                     lorque l'on clique dessus. Le jeu comprend aussi une détéction automatique des situations 
-                    d'échec ainsi que d'échec et mat
+                    d'échec ainsi que d'échec et mat.
                 </p>
                 <p>
                     Le jeu dispose d'une interface graphique réalisée avec PyGame. L'interface comprend le 
@@ -190,10 +284,10 @@
             </div>
 
             <div class="button-container">
-                <a target="_blank" href="chess/chess/web-chess/chess.html" class="play-button">Jouer au jeu</a>
+                <a href="chess/chess/web-chess/chess.html" class="play-button" target="_blank">Jouer au jeu</a>
             </div>
 
-            <div class="technologies">
+            <div>
                 <h2 class="tech-title">Technologies utilisées</h2>
                 <div class="tech-list">
                     <span class="tech-tag">Python</span>
